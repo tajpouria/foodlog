@@ -1,0 +1,21 @@
+    <div class="card mt-6">
+      <header class="card-header">
+        <p class="card-header-title">
+          <%= entry.food_type %>
+        </p>
+      </header>
+      <div class="card-content">
+        <div class="content">
+          <p><span class="has-text-weight-bold"><%= entry.calories %> </span> calories</p>
+          <p><span class="has-text-weight-bold"><%= entry.protein %></span> grams of protein</p>
+          <p><span class="has-text-weight-bold"><%= entry.carbohydrate %></span> grams carbohydrates</p>
+          <p><span class="has-text-weight-bold"><%= entry.fat %></span> grams of fat</p>
+          <p class="italic"><%= time_ago_in_words(entry.created_at) %> ago</p>
+        </div>
+      </div>
+      <div class="card-footer">
+        <%= link_to 'Show', entry, class: "card-footer-item" %>
+        <%= link_to 'Edit', edit_entry_path(entry), class: "card-footer-item" %>
+        <%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' }, class: "card-footer-item" %>
+      </div>
+    </div>

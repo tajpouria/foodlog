@@ -1,0 +1,25 @@
+<div class="column is-one-third">
+  <nav class="panel is-link">
+    <p class="panel-heading">
+      <%= @entry.food_type %>
+    </p>
+    <div class="panel-block">
+      Calories: <%= @entry.calories %>
+    </div>
+    <div class="panel-block">
+      Proteins: <%= @entry.protein %>
+    </div>
+    <div class="panel-block">
+      Carbohydrates: <%= @entry.carbohydrate %>
+    </div>
+    <div class="panel-block">
+      Fats: <%= @entry.fat %>
+    </div>
+    </nav>
+    <div class="columns is-mobile">
+      <div class="column">
+        <%= link_to "Edit", edit_entry_path(@entry), class: "button is-gray" %>
+        <%= link_to "Delete", entry_path(@entry), class: "button is-gray", method: :delete, data: { confirm: "Are you sure?" } %>
+      </div>
+    </div>
+</div>

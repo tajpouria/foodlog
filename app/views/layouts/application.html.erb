@@ -1,0 +1,33 @@
+<% content_for :title do %>
+  Foodlog &ndash; <%= Time.now.strftime("%B %d, %Y") %>
+<% end %>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Foodlog</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <%= render "shared/header" %>
+    
+    <% if notice.present? %>
+      <p class="notification is-link is-light"><%= notice %></p>
+    <% end %>
+
+    <% if alert.present? %>
+      <p class="notification is-danger is-light"><%= alert %></p>
+    <% end %>
+
+    <div class="container">
+      <%= yield %>
+    </div>
+  </body>
+</html>

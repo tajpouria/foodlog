@@ -1,0 +1,11 @@
+<% content_for :title do %>
+  Foodlog &ndash; <%= Time.now.strftime("%B %d, %Y") %>
+<% end %>
+
+<div class="columns is-multiline" id="entries">
+  <% @entries.each do |entry| %>
+    <div class="column is-one-third">
+      <%= render entry %>
+    </div>
+  <% end %>
+</div>
